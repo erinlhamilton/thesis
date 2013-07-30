@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Erin's Thesis</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css"></style>
+</head>
+
+<body>
+<div id="container">
+<header id="header">Erin's Super Fantastic Geoprocessing Test Suite!</header>
+<br>
+
+	
+	<button type="button" id="uaString">User Agent String</button>
+	<div id="userAgent">
+	</div>
+
+	<button type="button" id="latency">Test Latency</button>
+	<div id="testLatency">
+	</div>
+	
+	<button type="button" id="bandwidth">Test Bandwidth</button>
+	<div id="testBandwidth">
+	</div>
+	
+	<div id="client">
+	<h1>Client Test</h1>
+		<button type="button" id="runClient">Run Test</button>
+		<iframe id = "client" src=""></iframe>
+	</div>
+	<div id="server">
+	<h1>Server Test</h1>
+		<button type="button" id="runServer">Run Test</button>
+		<iframe id = "server" src=""></iframe>
+	</div>
+	<div id="results">
+		<div id="clientResult">
+		<h1>Client Results</h1>
+	<table border="1">
+		<tr>
+		<th>Step</th>
+		<th>Time (milliseconds)</th>
+		</tr>
+		<tr>
+		  <td>Download</td>
+		  <td><div id="clientDownload"></div></td>
+		</tr>
+		<tr>
+		  <td>Parse Data</td>
+		  <td><div id="clientParse"></div></td>
+		</tr>
+		<tr>
+		  <td>Process</td>
+		  <td><div id="clientProcess"></div></td>
+		</tr>
+		<tr>
+		  <td>Store Results</td>
+		  <td><div id="clientResults"></div></td>
+		</tr>
+		<tr>
+		  <td>Total</td>
+		  <td><div id="clientTotal"></div></td>
+		</tr>
+		</table>
+		<button type="button" id="pushClient">Save to Google Docs</button>
+		</div>
+		<div id="serverResult">
+			<h1>Server Results</h1>
+			<table border="1">
+				<tr>
+				<th>Step</th>
+				<th>Time (milliseconds)</th>
+				</tr>
+				<tr>
+				  <td>Request</td>
+				  <td><div id="serverRequest"></div></td>
+				</tr>
+				<tr>
+				  <td>Parse Data</td>
+				  <td><div id="serverParse"></div></td>
+				</tr>
+				<tr>
+				  <td>Process</td>
+				  <td><div id="serverProcess"></div></td>
+				</tr>
+				<tr>
+				  <td>Return Results</td>
+				  <td><div id="serverResults"></div></td>
+				</tr>
+				<tr>
+				  <td>Total</td>
+				  <td><div id="serverTotal"></div></td>
+				</tr>
+				</table>
+		<button type="button" id="pushServer">Save to Google Docs</button>
+		</div>
+	
+	</div>
+	
+</div>
+
+<!--JavaScript Libraries-->
+<script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="lib/ua-parser.min.js"></script>
+<!-- <script type="text/javascript" src="lib/jsts.js"></script> -->
+
+<!--Custom JS Code-->
+<!-- <script type="text/javascript" src="js/algorithms.js"></script>
+<script type="text/javascript" src="js/dataFormat.js"></script>
+<script type="text/javascript" src="js/dataSize.js"></script>
+<script type="text/javascript" src="js/dataType.js"></script> -->
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>
