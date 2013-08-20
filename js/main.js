@@ -15,7 +15,10 @@
 //////////////////////////// 80 columns wide //////////////////////////////////
 
 /**Global Variabls**/
-
+var imageAddr = "http://www.erinhamilton.me/thesis/img/2012_7.png" + "?n=" + Math.random();
+var startTime, endTime;
+var downloadSize = 1531904;
+var download = new Image();
 
 //Order of operation:
 //1. Screen to explain and user agree to test and click OK or Cancel/Do not want
@@ -36,14 +39,10 @@
 //Have a check that it made it through all of the tests
 
 function initialize(){
-	
-	$("#uaString").click(function(){
-		obtainUserAgent();
-	});
-	
-	$("#latency").click(function(){
-		testBaseLatency();
-	});
+	obtainUserAgent();
+	testBaseLatency();
+	testBaseBandwidth();
+	//runTest();
 }
 
 
@@ -91,10 +90,29 @@ function testBaseLatency(){
 }
 
 /**
- *  Test the base bandwidth for that day before proceeding. 
+ *  Test the base bandwidth that is there for the time of the test. 
  */
 function testBaseBandwidth(){
 
+	download.onload = function () {
+		endTime = (new Date()).getTime();
+		showResults();
+	}
+	startTime = (new Date()).getTime();
+	download.src = imageAddr;
+}
+
+/**
+ *  print results of bandwidth test to console
+ */
+function showResults() {
+    var duration = (endTime - startTime) / 1000; //Math.round()
+    var bitsLoaded = downloadSize * 8;
+    var speedBps = (bitsLoaded / duration).toFixed(2);
+    var speedKbps = (speedBps / 1024).toFixed(2);
+    var speedMbps = (speedKbps / 1024).toFixed(2);
+	$('#testBandwidth').html("Connection Speed: \n" + 
+           speedMbps + " Mbps\n" );
 }
 
 /**
